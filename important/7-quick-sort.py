@@ -92,6 +92,12 @@ def quick_sort4(A,p,r):
         quick_sort4(A,p,q-1)
         quick_sort4(A,q+1,r)
 
+def quick_sort_tail_recursive(A, p, r):
+    while p<r:
+        q = partition(A, p, r)
+        quick_sort_tail_recursive(A, p, q-1)
+        p = q+1
+
 print('before sort:')
 print(A)
 quick_sort4(A,0,len(A)-1)
